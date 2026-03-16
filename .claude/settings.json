@@ -1,0 +1,60 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "ORACLE_NAME=Data-Oracle python3 ~/.oracle/feed-hook.py"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "ORACLE_NAME=Data-Oracle python3 ~/.oracle/feed-hook.py"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "ORACLE_NAME=Data-Oracle python3 ~/.oracle/feed-hook.py"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "ORACLE_NAME=Data-Oracle python3 ~/.oracle/feed-hook.py"
+          }
+        ]
+      }
+    ]
+  },
+  "mcpServers": {
+    "oracle-v2": {
+      "command": "/home/mbank/.local/bin/bun-linux",
+      "args": [
+        "/home/mbank/repos/github.com/Soul-Brews-Studio/oracle-v2/src/index.ts"
+      ],
+      "env": {
+        "ORACLE_DATA_DIR": "/home/mbank/.oracle",
+        "ORACLE_REPO_ROOT": "/home/mbank/repos/github.com/BankCurfew/Data-Oracle"
+      }
+    }
+  }
+}
