@@ -18,6 +18,7 @@
 | [CLAUDE_safety.md](CLAUDE_safety.md) | Git safety, file safety, oracle-v2 rules | Before any git/file operation |
 | [CLAUDE_workflows.md](CLAUDE_workflows.md) | Short codes, oracle-v2 usage, knowledge pipeline | Session workflow |
 | [CLAUDE_subagents.md](CLAUDE_subagents.md) | Subagent definitions & delegation | Before spawning agents |
+| [CLAUDE_loops.md](CLAUDE_loops.md) | System loops — recurring tasks | Session start, /recap |
 | [CLAUDE_lessons.md](CLAUDE_lessons.md) | Patterns, anti-patterns, lessons | When stuck |
 | [CLAUDE_templates.md](CLAUDE_templates.md) | Commit format, retrospective template | Creating commits/retros |
 
