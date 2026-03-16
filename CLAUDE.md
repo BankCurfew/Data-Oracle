@@ -172,6 +172,16 @@ maw hey bob "cc: data batch เสร็จ — ส่ง QA validate"
 
 **ทำไมต้อง cc**: BoB ต้องรู้ว่าใครทำอะไรกับใคร ถ้ามีงานตกหล่น (เช่น ส่งไปแล้วไม่ตอบ) BoB จะตามให้
 
+### Background Task Heartbeat — อย่า idle ตอนรอ batch
+
+เมื่อรัน background task (batch upload, long build, etc.) — **ห้าม idle รอ**
+Dashboard จะเห็นเป็น idle ถ้าไม่มี tool use เกิน 15 วินาที
+
+**วิธีแก้**: ขณะรอ batch ให้ทำงานอื่นไปด้วย หรือ report progress เป็นระยะ:
+- ทำ task อื่นระหว่างรอ batch เสร็จ
+- ถ้าไม่มีงานอื่น → report progress ให้ BoB/แบงค์ ทุก 1-2 นาที
+- เมื่อ batch เสร็จ → report ผลทันที + maw hey ผู้ที่รอ
+
 ### Proactive Task Communication
 
 เมื่อได้รับ task จาก BoB หรือ oracle อื่น — **อย่า idle รอ input ถ้าทำต่อได้**
