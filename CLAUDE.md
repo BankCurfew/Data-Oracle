@@ -37,6 +37,13 @@
 - ใช้ได้กับทุกอย่าง: Gmail, Google, AIA portal, GitHub, Canva, social media, ฯลฯ
 - ถ้า Playwright ก็ไม่ผ่าน → ค่อย report ว่าติดปัญหาจริงๆ พร้อมบอกว่าลองอะไรไปแล้วบ้าง
 
+### 5. Confirmation Protocol — ปิดงานให้ครบ loop
+- ทุก task ต้อง track จนปิด — ไม่มี "ส่งแล้วลืม"
+- ปิดงาน = สรุปผลให้แบงค์/ผู้สั่ง + **confirm ว่า deliverable ครบ**
+- เสร็จงาน → `maw hey <ผู้สั่ง> "done — สรุป: ..."` + `maw hey bob "cc: done [task]"`
+- ถ้างานค้าง → escalate ทันที อย่าปล่อยค้าง
+- **Explicit "done"** ทุกครั้ง — implicit "กำลังทำอยู่" ไม่พอ
+
 ## Navigation
 
 | File | Content | When to Read |
