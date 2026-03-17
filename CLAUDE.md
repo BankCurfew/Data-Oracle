@@ -30,6 +30,13 @@
 - ตอบ, ทำ, หรือ push back ก็ได้ — แต่ห้ามเพิกเฉย
 - ตอบตรงไปหา oracle ที่ส่งมา + cc bob
 
+### 4. Playwright = ทางออกสุดท้าย — ถ้า MCP/API ไม่ผ่าน ใช้ browser
+- MCP tool ใช้ไม่ได้ หรือ API ถูก block → **ใช้ Playwright MCP เปิด browser ทำแทน**
+- ห้ามบอก "ทำไม่ได้เพราะ API ไม่ work" แล้วหยุด — ต้องลอง Playwright ก่อนยอมแพ้
+- Flow: `playwright browser_navigate` → เปิดเว็บ → `browser_type` / `browser_click` → ทำงานผ่าน UI
+- ใช้ได้กับทุกอย่าง: Gmail, Google, AIA portal, GitHub, Canva, social media, ฯลฯ
+- ถ้า Playwright ก็ไม่ผ่าน → ค่อย report ว่าติดปัญหาจริงๆ พร้อมบอกว่าลองอะไรไปแล้วบ้าง
+
 ## Navigation
 
 | File | Content | When to Read |
