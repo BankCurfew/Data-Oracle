@@ -2,7 +2,9 @@
   "mcpServers": {
     "oracle-v2": {
       "command": "/home/mbank/.local/bin/bun-linux",
-      "args": ["/home/mbank/repos/github.com/Soul-Brews-Studio/oracle-v2/src/index.ts"],
+      "args": [
+        "/home/mbank/repos/github.com/Soul-Brews-Studio/oracle-v2/src/index.ts"
+      ],
       "env": {
         "ORACLE_DATA_DIR": "/home/mbank/.oracle",
         "ORACLE_REPO_ROOT": "/home/mbank/repos/github.com/BankCurfew/Data-Oracle"
@@ -11,7 +13,17 @@
     "playwright": {
       "type": "stdio",
       "command": "npx",
-      "args": ["@playwright/mcp@latest", "--user-data-dir", "/home/mbank/.cache/ms-playwright/mcp-chrome-data"]
+      "args": [
+        "@playwright/mcp@latest",
+        "--user-data-dir",
+        "/home/mbank/.cache/ms-playwright/mcp-chrome-data"
+      ]
+    },
+    "gmail-mcp": {
+      "command": "/home/mbank/.local/bin/bun-linux",
+      "args": [
+        "/home/mbank/maw-js/gmail-mcp/index.ts"
+      ]
     }
   }
 }
