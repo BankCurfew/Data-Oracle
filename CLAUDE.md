@@ -13,20 +13,21 @@
 
 ## ⚠️ THE LAW (ห้ามละเมิด — อ่านก่อนทำอะไรทุกอย่าง)
 
-### 1. maw hey คือวิธีเดียวในการคุยกับ oracle อื่น
-- ต้องการคุยกับใคร → `maw hey <oracle> "message"` เสมอ
-- ห้ามแค่คิดว่าจะส่ง — ต้อง run `maw hey` จริงๆ ทุกครั้ง
-- cc BoB ทุกครั้ง: `maw hey bob "cc: [สิ่งที่ทำ]"`
+### 1. /talk-to คือวิธีหลักในการคุยกับ oracle อื่น
+- ต้องการคุยกับใคร → `/talk-to <oracle> "message"` เป็นวิธีหลัก
+- `/talk-to` สร้าง audit trail ใน Oracle thread — แบงค์และ BoB ตรวจสอบได้
+- ถ้า `/talk-to` ใช้ไม่ได้ (MCP ล่ม) → fallback ใช้ `maw hey <oracle> "message"`
+- cc BoB ทุกครั้ง: `/talk-to bob "cc: [สิ่งที่ทำ]"`
 
 ### 2. ห้าม IDLE — ได้รับ task แล้วทำจนเสร็จ
 - ได้รับ task → **ทำเลย** ห้ามถามว่า "ให้ทำไหม?"
-- ทำเสร็จ → `maw hey <ผู้สั่ง> "เสร็จแล้ว — สรุป: ..."` ทันที
-- ติดปัญหา → `maw hey <ผู้สั่ง> "ติดปัญหา — ต้องการ X"` ทันที อย่ารอ
+- ทำเสร็จ → `/talk-to <ผู้สั่ง> "เสร็จแล้ว — สรุป: ..."` ทันที
+- ติดปัญหา → `/talk-to <ผู้สั่ง> "ติดปัญหา — ต้องการ X"` ทันที อย่ารอ
 - **งานยังไม่จบ = คุณยังไม่จบ** — ห้ามหยุดกลางทาง ห้าม idle รอโดยไม่ทำอะไร
 - ถ้ารอ input → ทำงานอื่นไปก่อน หรือ report progress ทุก 1-2 นาที
 
 ### 3. ตอบทุกข้อความ — ห้ามเงียบ
-- oracle อื่นส่ง `maw hey` มา → **ต้องตอบกลับเสมอ**
+- oracle อื่นส่ง `/talk-to` หรือ `maw hey` มา → **ต้องตอบกลับเสมอ**
 - ตอบ, ทำ, หรือ push back ก็ได้ — แต่ห้ามเพิกเฉย
 - ตอบตรงไปหา oracle ที่ส่งมา + cc bob
 
@@ -136,17 +137,20 @@ AIA/Dev → Data (ingest + transform) → QA (validate) → Report
 
 ## Team Communication
 
-You can talk to any oracle directly via `maw hey`. **ส่งกันเองได้เลย** — ไม่ต้องผ่าน BoB ทุกเรื่อง
+You can talk to any oracle directly via `/talk-to` (primary) or `maw hey` (fallback). **ส่งกันเองได้เลย** — ไม่ต้องผ่าน BoB ทุกเรื่อง
 
 ```bash
-# Send message to another oracle (they must have an active Claude session)
+# Primary — /talk-to (has audit trail, thread history)
+/talk-to <oracle> "<message>"
+
+# Fallback — maw hey (when /talk-to MCP is unavailable)
 maw hey <oracle> "<message>"
 
 # Examples — talk directly to each other
-maw hey dev "API schema พร้อมยัง? ต้องใช้ design pipeline"
-maw hey qa "data batch เสร็จแล้ว — ขอ validate"
-maw hey aia "ขอ PDF ใหม่จาก eAgency portal — phase 5"
-maw hey researcher "ขอ data source list สำหรับ market research"
+/talk-to dev "API schema พร้อมยัง? ต้องใช้ design pipeline"
+/talk-to qa "data batch เสร็จแล้ว — ขอ validate"
+/talk-to aia "ขอ PDF ใหม่จาก eAgency portal — phase 5"
+/talk-to researcher "ขอ data source list สำหรับ market research"
 ```
 
 **The team**: bob, dev, qa, designer, researcher, writer, hr, aia, data
@@ -185,23 +189,23 @@ echo "$(date -u '+%Y-%m-%d %H:%M:%S') | $(basename $(pwd)) | $(hostname) | Notif
 
 ### CRITICAL: cc BoB ทุกครั้งที่คุยกับ oracle อื่น
 
-เมื่อคุยกับ oracle อื่นโดยตรง — **ต้อง maw hey bob แจ้งด้วยเสมอ** เพื่อให้ BoB track งานได้ครบ loop
+เมื่อคุยกับ oracle อื่นโดยตรง — **ต้อง cc bob แจ้งด้วยเสมอ** เพื่อให้ BoB track งานได้ครบ loop
 
 **ทุกครั้งที่:**
-- ส่ง task ให้ oracle อื่น → `maw hey bob "cc: ส่ง [task] ให้ [oracle] แล้ว — รอผล"`
-- ได้รับ task จาก oracle อื่น → `maw hey bob "cc: ได้รับ [task] จาก [oracle] — กำลังทำ"`
-- เสร็จงาน → `maw hey bob "cc: เสร็จ [task] แล้ว — ส่งผลกลับ [oracle]"`
-- ติดปัญหา → `maw hey bob "cc: ติดปัญหา [task] — รอ [อะไร] จาก [ใคร]"`
+- ส่ง task ให้ oracle อื่น → `/talk-to bob "cc: ส่ง [task] ให้ [oracle] แล้ว — รอผล"`
+- ได้รับ task จาก oracle อื่น → `/talk-to bob "cc: ได้รับ [task] จาก [oracle] — กำลังทำ"`
+- เสร็จงาน → `/talk-to bob "cc: เสร็จ [task] แล้ว — ส่งผลกลับ [oracle]"`
+- ติดปัญหา → `/talk-to bob "cc: ติดปัญหา [task] — รอ [อะไร] จาก [ใคร]"`
 
 **ตัวอย่าง:**
 ```bash
 # ขอ data จาก AIA
-maw hey aia "ขอ PDF list ใหม่จาก portal"
-maw hey bob "cc: ขอ data จาก AIA — รอ PDF list"
+/talk-to aia "ขอ PDF list ใหม่จาก portal"
+/talk-to bob "cc: ขอ data จาก AIA — รอ PDF list"
 
 # เสร็จ pipeline
-maw hey qa "data batch พร้อม validate — Supabase table: kb_documents"
-maw hey bob "cc: data batch เสร็จ — ส่ง QA validate"
+/talk-to qa "data batch พร้อม validate — Supabase table: kb_documents"
+/talk-to bob "cc: data batch เสร็จ — ส่ง QA validate"
 ```
 
 **ทำไมต้อง cc**: BoB ต้องรู้ว่าใครทำอะไรกับใคร ถ้ามีงานตกหล่น (เช่น ส่งไปแล้วไม่ตอบ) BoB จะตามให้
@@ -220,15 +224,15 @@ Dashboard จะเห็นเป็น idle ถ้าไม่มี tool use 
 
 เมื่อได้รับ task จาก BoB หรือ oracle อื่น — **อย่า idle รอ input ถ้าทำต่อได้**
 
-- ถ้าทำเสร็จ → `maw hey <ผู้สั่ง> "เสร็จแล้ว — สรุป: ..."` ทันที
-- ถ้าติดปัญหา → `maw hey <ผู้สั่ง> "ติดปัญหา — ต้องการ X"` อย่ารอ
-- ถ้าต้องการ input จากคนอื่น → `maw hey <oracle> "ขอ X หน่อย"` ถามเลย
+- ถ้าทำเสร็จ → `/talk-to <ผู้สั่ง> "เสร็จแล้ว — สรุป: ..."` ทันที
+- ถ้าติดปัญหา → `/talk-to <ผู้สั่ง> "ติดปัญหา — ต้องการ X"` อย่ารอ
+- ถ้าต้องการ input จากคนอื่น → `/talk-to <oracle> "ขอ X หน่อย"` ถามเลย
 - ถ้ามีหลาย oracle ในทีม → คุยกันเองได้ ไม่ต้องรอ BoB relay
 - **ห้าม idle ถามว่า "ให้ทำไหม?"** — ถ้าได้รับ task ก็ทำเลย ถ้าไม่มั่นใจค่อยถาม
 
 ### CRITICAL: Always respond to incoming messages
 
-เมื่อ oracle อื่นส่ง `maw hey` มาหา — **ต้องตอบกลับเสมอ** อย่า ignore
+เมื่อ oracle อื่นส่ง `/talk-to` หรือ `maw hey` มาหา — **ต้องตอบกลับเสมอ** อย่า ignore
 
 - ข้อความจาก oracle อื่นจะเข้ามาเป็น user input ใน session ของเรา
 - **ต้อง acknowledge ทุกข้อความ** — ตอบ, ทำ, หรือ push back ก็ได้ แต่ห้ามเงียบ
