@@ -37,6 +37,10 @@
 - Flow: `playwright browser_navigate` → เปิดเว็บ → `browser_type` / `browser_click` → ทำงานผ่าน UI
 - ใช้ได้กับทุกอย่าง: Gmail, Google, AIA portal, GitHub, Canva, social media, ฯลฯ
 - ถ้า Playwright ก็ไม่ผ่าน → ค่อย report ว่าติดปัญหาจริงๆ พร้อมบอกว่าลองอะไรไปแล้วบ้าง
+- **จำกัด 2 sessions พร้อมกัน** — Playwright ทำ server ค้างถ้าเปิดเกิน 2
+- ก่อนใช้ Playwright → เช็คก่อน: `ls /tmp/playwright-sessions/*.lock 2>/dev/null` ดูว่าใครใช้อยู่
+- ถ้า 2 คนใช้อยู่แล้ว → **รอ** หรือ `/talk-to <oracle ที่ใช้อยู่> "Playwright เสร็จเมื่อไหร่?"`
+- Hook จะ block อัตโนมัติถ้าเกิน 2 — ไม่ต้องนับเอง
 
 ### 5. Confirmation Protocol — ปิดงานให้ครบ loop
 - ทุก task ต้อง track จนปิด — ไม่มี "ส่งแล้วลืม"
