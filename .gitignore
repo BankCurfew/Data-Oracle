@@ -15,3 +15,12 @@ data/processed/
 *.pdf
 *.csv.gz
 *.parquet
+
+# Security — secrets & credentials (added by Security-Oracle)
+*.key
+*.pem
+*.crt
+credentials*.json
+secrets*.json
+*secret*
+.claude/settings.json
