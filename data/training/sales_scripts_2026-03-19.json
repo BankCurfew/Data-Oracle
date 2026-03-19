@@ -1,0 +1,273 @@
+[
+  {
+    "conversation_id": "Ue1ddfe0cec868dd06dd956898c7f45d5",
+    "contact": "CL010055",
+    "msg_count": 8,
+    "topic": "life",
+    "stages": [
+      "qualify"
+    ]
+  },
+  {
+    "conversation_id": "Udedad8b55672a08c0a65e8b9caf108ea",
+    "contact": "A91 cc",
+    "msg_count": 26,
+    "topic": "health",
+    "stages": [
+      "inquiry",
+      "qualify",
+      "propose",
+      "application",
+      "payment"
+    ]
+  },
+  {
+    "conversation_id": "U686e215bc94ed387f25c839cfbeb406d",
+    "contact": "CL040032",
+    "msg_count": 108,
+    "topic": "health",
+    "stages": [
+      "inquiry",
+      "qualify",
+      "propose",
+      "application",
+      "payment",
+      "close"
+    ]
+  },
+  {
+    "conversation_id": "U541935933fdf127e08d0c7c757dc0a16",
+    "contact": "CG02003",
+    "msg_count": 228,
+    "topic": "health",
+    "stages": [
+      "inquiry",
+      "qualify",
+      "propose",
+      "application",
+      "payment",
+      "close"
+    ]
+  },
+  {
+    "conversation_id": "U328d0883b36ee201b38e244ac771ad84",
+    "contact": "CL040034",
+    "msg_count": 303,
+    "topic": "health",
+    "stages": [
+      "inquiry",
+      "qualify",
+      "propose",
+      "application",
+      "payment",
+      "close"
+    ]
+  },
+  {
+    "conversation_id": "Uffe075975fe6d257dc958fce2a12242a",
+    "contact": "CL02017",
+    "msg_count": 273,
+    "topic": "health",
+    "stages": [
+      "inquiry",
+      "qualify",
+      "propose",
+      "application",
+      "payment",
+      "close"
+    ]
+  },
+  {
+    "conversation_id": "U2845fc20fbe7136e7d4cd0808ea0734e",
+    "contact": "CL91003",
+    "msg_count": 74,
+    "topic": "health",
+    "stages": [
+      "inquiry",
+      "qualify",
+      "propose",
+      "application",
+      "payment",
+      "close"
+    ]
+  },
+  {
+    "conversation_id": "Udc74cfe47af4e089d436e23d30bb72c7",
+    "contact": "CL020055",
+    "msg_count": 72,
+    "topic": "health",
+    "stages": [
+      "inquiry",
+      "qualify",
+      "propose",
+      "application",
+      "payment",
+      "close"
+    ]
+  },
+  {
+    "conversation_id": "U6e8d150c9d10084cb34d065b769bd5b1",
+    "contact": "CL04024",
+    "msg_count": 136,
+    "topic": "health",
+    "stages": [
+      "inquiry",
+      "qualify",
+      "propose",
+      "application",
+      "payment",
+      "close"
+    ]
+  },
+  {
+    "conversation_id": "Ue16597bb9816b0ddd4595b97b56ef1ec",
+    "contact": "A02 Mookky",
+    "msg_count": 167,
+    "topic": "health",
+    "stages": [
+      "inquiry",
+      "qualify",
+      "propose",
+      "application",
+      "payment",
+      "close"
+    ]
+  },
+  {
+    "conversation_id": "U84b63a7a0cb7fe735978e5f14914e29e",
+    "contact": "CL02032",
+    "msg_count": 142,
+    "topic": "health",
+    "stages": [
+      "inquiry",
+      "qualify",
+      "propose",
+      "application",
+      "payment",
+      "close"
+    ]
+  },
+  {
+    "conversation_id": "U9bde0281df27f51598d94ca66c80d8ea",
+    "contact": "CL01034",
+    "msg_count": 141,
+    "topic": "health",
+    "stages": [
+      "inquiry",
+      "qualify",
+      "propose",
+      "application",
+      "payment",
+      "close"
+    ]
+  },
+  {
+    "conversation_id": "U0b5d2ae61ef227f907a8ce17f76b0d76",
+    "contact": "A04 Mon",
+    "msg_count": 55,
+    "topic": "health",
+    "stages": [
+      "inquiry",
+      "qualify",
+      "propose",
+      "application",
+      "payment",
+      "close"
+    ]
+  },
+  {
+    "conversation_id": "U286512ae8d889c707638482b7f31a7c8",
+    "contact": "A91 Mod",
+    "msg_count": 30,
+    "topic": "health",
+    "stages": [
+      "inquiry",
+      "qualify",
+      "propose",
+      "application",
+      "payment",
+      "close"
+    ]
+  },
+  {
+    "conversation_id": "U55ad2aa7a90deeefa76bd9645503f2c4",
+    "contact": "CL020053",
+    "msg_count": 51,
+    "topic": "health",
+    "stages": [
+      "inquiry",
+      "propose",
+      "application",
+      "payment",
+      "close"
+    ]
+  },
+  {
+    "conversation_id": "U0e17ebf24657ea5a0df75b1481efd22e",
+    "contact": "CL02006",
+    "msg_count": 43,
+    "topic": "health",
+    "stages": [
+      "inquiry",
+      "qualify",
+      "propose",
+      "application",
+      "payment",
+      "close"
+    ]
+  },
+  {
+    "conversation_id": "U38e54b63c3e557ea3bb2c46882849279",
+    "contact": "A04 olive",
+    "msg_count": 79,
+    "topic": "health",
+    "stages": [
+      "inquiry",
+      "qualify",
+      "propose",
+      "application",
+      "payment",
+      "close"
+    ]
+  },
+  {
+    "conversation_id": "U61e5d785a73c707b454b7402fb54e665",
+    "contact": "CL02009",
+    "msg_count": 287,
+    "topic": "health",
+    "stages": [
+      "inquiry",
+      "qualify",
+      "propose",
+      "application",
+      "payment",
+      "close"
+    ]
+  },
+  {
+    "conversation_id": "Ua2c9813f9937ac2d65f0e6252e8b9265",
+    "contact": "CL02012",
+    "msg_count": 35,
+    "topic": "health",
+    "stages": [
+      "inquiry",
+      "propose",
+      "application",
+      "payment",
+      "close"
+    ]
+  },
+  {
+    "conversation_id": "U409f84d0f8ac830f95ac559dc976b83e",
+    "contact": "A02 Puiiii",
+    "msg_count": 57,
+    "topic": "life",
+    "stages": [
+      "inquiry",
+      "qualify",
+      "propose",
+      "payment",
+      "close"
+    ]
+  }
+]

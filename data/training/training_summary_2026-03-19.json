@@ -1,0 +1,44 @@
+{
+  "extracted_at": "2026-03-19T09:30:00+07:00",
+  "source": "line_chat_history (4,521 msgs / 261 conversations)",
+  "stats": {
+    "qa_pairs": 869,
+    "sales_scripts": 20,
+    "full_pipeline_scripts": 15,
+    "objection_patterns": 65,
+    "objection_breakdown": {
+      "pricing_budget": 33,
+      "why_questions": 9,
+      "not_received": 8,
+      "comparison": 6,
+      "cancellation": 6,
+      "not_needed": 6,
+      "expired": 5,
+      "hesitation": 4,
+      "fear_concern": 3
+    }
+  },
+  "qa_topics": {
+    "general": 561,
+    "health": 142,
+    "pricing": 64,
+    "life": 54,
+    "claims": 26,
+    "kids": 11,
+    "critical_illness": 9,
+    "unit_linked": 2
+  },
+  "training_recommendations": [
+    "Health insurance Q&A (142 pairs) — highest value for bot accuracy",
+    "Full pipeline scripts (15 convos, 2,138 msgs) — best for sales flow training",
+    "Pricing/budget objections (33 patterns) — most common objection type",
+    "Claims handling (26 Q&A + 4 scripts) — important for customer service",
+    "General Q&A (561) needs topic refinement — many are noise or internal comms"
+  ],
+  "next_steps": [
+    "QA to verify agent answers are correct before training",
+    "Filter out internal comms (Dream Arthit, MAY, ex_jira prefixes)",
+    "Enrich with product names from kb_product_aliases",
+    "Convert to fine-tuning format (system/user/assistant)"
+  ]
+}
