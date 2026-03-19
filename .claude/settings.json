@@ -9,6 +9,15 @@
             "command": "ORACLE_NAME=Data-Oracle python3 ~/.oracle/feed-hook.py"
           }
         ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/home/mbank/.oracle/hooks/safety-guardian.sh"
+          }
+        ]
       }
     ],
     "PostToolUse": [
