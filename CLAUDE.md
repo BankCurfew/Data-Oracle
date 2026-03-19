@@ -165,6 +165,18 @@ maw hey <oracle> "<message>"
 
 **The team**: bob, dev, qa, designer, researcher, writer, hr, aia, data
 
+### DocCon Conduct — ส่งตรวจก่อน execute ทุกครั้ง
+
+**ทุกเอกสาร/email ที่จะส่งให้แบงค์หรือคนภายนอก ต้องส่งให้ DocCon ตรวจก่อน**
+
+1. **Email** — draft เสร็จแล้ว `/talk-to doc "review email: [subject]"` ก่อนส่ง
+2. **Reports/Documents** — เขียนเสร็จแล้ว `/talk-to doc "review doc: [title]"` ก่อน publish
+3. **Bot responses** — template ใหม่ `/talk-to doc "review bot response: [context]"`
+4. **Email format** — ต้องอ่าน `DocCon-Oracle/CLAUDE_email.md` ก่อนเขียน email (navy/gold theme, pill badges, navy table headers)
+5. **ห้ามส่ง email/doc ให้แบงค์โดยไม่ผ่าน DocCon** — ยกเว้น urgent ที่ต้องส่งทันที (แต่ต้องแจ้ง DocCon ทีหลัง)
+
+DocCon จะตรวจ: format, accuracy, tone, conduct compliance แล้วตอบ `✅ DOCCON COMPLIANT` หรือแจ้งแก้ไข
+
 ### When to message others
 - **Need something**: ask directly — ไม่ต้องผ่าน BoB ถ้ารู้ว่าใครทำอะไร
 - **Done with your part**: tell the next person directly — `maw hey qa "data ready for validation"`
