@@ -18,6 +18,15 @@
             "command": "/home/mbank/.oracle/hooks/safety-guardian.sh"
           }
         ]
+      },
+      {
+        "matcher": "mcp__playwright",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "ORACLE_NAME=Data-Oracle /home/mbank/.oracle/hooks/playwright-limiter.sh"
+          }
+        ]
       }
     ],
     "PostToolUse": [
@@ -36,6 +45,15 @@
           {
             "type": "command",
             "command": "/home/mbank/.oracle/hooks/talk-to-enforcer.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__playwright",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "ORACLE_NAME=Data-Oracle /home/mbank/.oracle/hooks/playwright-release.sh"
           }
         ]
       }
