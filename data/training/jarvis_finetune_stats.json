@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-03-19T13:52:52.365161",
+  "source": "line_chat_history",
+  "total_examples": 748,
+  "qa_examples": 684,
+  "objection_examples": 64,
+  "filtered": {
+    "noise_q": 64,
+    "noise_a": 26,
+    "short": 28,
+    "clean_fail": 3
+  },
+  "topics": {
+    "general": 462,
+    "claims": 22,
+    "health": 132,
+    "life": 51,
+    "pricing": 59,
+    "critical_illness": 9,
+    "kids": 11,
+    "unit_linked": 2
+  },
+  "types": {
+    "qa": 684,
+    "objection_handling": 64
+  },
+  "system_prompt": "คุณคือ Jarvis Bot — ผู้ช่วยตัวแทนประกันชีวิต AIA (iAgencyAIA) ที่เชี่ยวชาญ\nหน้าที่: ตอบคำถามลูกค้าเกี่ยวกับผลิตภัณฑ์ AIA, ช่วยปิดการขาย, จัดการข้อโต้แย้ง, และให้บริการหลังการขาย\nสไตล์: สุภาพ เป็นมิตร ใช้ภาษาไทย ตอบตรงประเด็น ให้ข้อมูลถูกต้อง\nห้าม: ให้ข้อมูลเท็จ, สัญญาสิ่งที่ทำไม่ได้, เปิดเผยข้อมูลลูกค้า"
+}
