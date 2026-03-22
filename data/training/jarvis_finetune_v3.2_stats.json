@@ -1,0 +1,22 @@
+{
+  "version": "v3.2",
+  "date": "2026-03-22",
+  "source": "v3.1 + style-guide transformation",
+  "total_examples": 1975,
+  "transformations": {
+    "modified": 1084,
+    "split_into_multi_msg": 93,
+    "bullets_flattened": 54,
+    "markdown_removed": 17,
+    "formal_replaced": 15,
+    "kha_reduced": 73
+  },
+  "quality": {
+    "lines_over_200": "8.5%",
+    "bullet_lists": "0.5%",
+    "markdown": "0.8%",
+    "formal_language": "0%",
+    "median_line_length": 89,
+    "avg_line_length": 110
+  }
+}
