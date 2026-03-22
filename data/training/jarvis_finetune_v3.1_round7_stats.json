@@ -1,0 +1,36 @@
+{
+  "created_at": "2026-03-20T15:08:50.772418",
+  "version": "v3.1",
+  "round": 7,
+  "total_examples": 1975,
+  "life_examples": 212,
+  "winning_examples": 103,
+  "categories": {
+    "objection": 597,
+    "health": 163,
+    "comparison": 17,
+    "pre_existing": 4,
+    "closing": 7,
+    "winning": 42,
+    "life": 212,
+    "sales": 551,
+    "savings": 2,
+    "pricing": 370,
+    "kids": 2,
+    "claims": 6,
+    "greeting": 1,
+    "ci": 1
+  },
+  "sources": {
+    "line_chat_27k": 1832,
+    "scripted": 20,
+    "line_chat_27k_life_enrichment": 82,
+    "scripted_life": 41
+  },
+  "fixes": {
+    "gender": "664 examples normalized (ครับ→ค่ะ) — consistent female bot voice",
+    "life_enrichment": "life: 51 → 212 examples (+161)",
+    "kb_chunks": "8 life insurance KB chunks inserted (IDs 11412-11419)",
+    "reclassified": "38 examples reclassified from other categories to life"
+  }
+}
