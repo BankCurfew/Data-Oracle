@@ -44,7 +44,7 @@
                 "hooks": [
                     {
                         "type": "command",
-                        "command": "/home/mbank/.oracle/hooks/talk-to-enforcer.sh"
+                        "command": "ORACLE_NAME=Data-Oracle bash ~/.oracle/hooks/talk-to-enforcer.sh"
                     }
                 ]
             },
