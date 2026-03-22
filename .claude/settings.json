@@ -76,6 +76,10 @@
           {
             "type": "command",
             "command": "ORACLE_NAME=Data-Oracle python3 ~/.oracle/feed-hook.py"
+          },
+          {
+            "type": "command",
+            "command": "ORACLE_NAME=Data-Oracle python3 -c \"\" || bash ~/.oracle/hooks/cc-bob-enforcer.sh"
           }
         ]
       }
