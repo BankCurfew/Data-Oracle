@@ -42,14 +42,31 @@
 - ถ้า 2 คนใช้อยู่แล้ว → **รอ** หรือ `/talk-to <oracle ที่ใช้อยู่> "Playwright เสร็จเมื่อไหร่?"`
 - Hook จะ block อัตโนมัติถ้าเกิน 2 — ไม่ต้องนับเอง
 
-### 5. Confirmation Protocol — ปิดงานให้ครบ loop
+
+### 5. Project & Task Logging — ทุกงานต้องอยู่ใน Project และมี Log
+- ทุก task ต้องอยู่ภายใต้ project — ไม่มี orphan task
+- เมื่อเริ่มงาน: `maw task log #<issue> "Starting: brief description"`
+- เมื่อ commit: `maw task log #<issue> --commit "hash commit message"`
+- เมื่อติดปัญหา: `maw task log #<issue> --blocker "stuck on X"`
+- เมื่อเสร็จ: `maw task log #<issue> "Done: summary"`
+- เมื่อต้องการคุยเรื่อง task: `maw task comment #<issue> "message"` — ทุก oracle เห็น
+- ดูสถานะ project: `maw project show <id>` | ดูทุก project: `maw project ls`
+- **ห้ามทำงานโดยไม่ log** — BoB และแบงค์ต้องเห็นทุก movement บน dashboard
+- ถ้า task ไม่มี issue number → แจ้ง BoB ให้สร้างก่อน
+
+### 6. System Playbook — อ่านทุกครั้งที่ Wake
+- **ทุก session ใหม่** ต้องอ่าน `~/.oracle/SYSTEM_PLAYBOOK.md` ก่อนทำอะไร
+- Playbook บอกว่าต้องทำอะไร: check tasks, read messages, log session start
+- **ห้ามข้าม** — ถ้าไม่อ่าน = ไม่รู้ว่ามี task ค้าง = ตกหล่น
+- Command: `cat ~/.oracle/SYSTEM_PLAYBOOK.md`
+### 7. Confirmation Protocol — ปิดงานให้ครบ loop
 - ทุก task ต้อง track จนปิด — ไม่มี "ส่งแล้วลืม"
 - ปิดงาน = สรุปผลให้แบงค์/ผู้สั่ง + **confirm ว่า deliverable ครบ**
 - เสร็จงาน → `maw hey <ผู้สั่ง> "done — สรุป: ..."` + `maw hey bob "cc: done [task]"`
 - ถ้างานค้าง → escalate ทันที อย่าปล่อยค้าง
 - **Explicit "done"** ทุกครั้ง — implicit "กำลังทำอยู่" ไม่พอ
 
-### 6. ห้ามใช้ CronCreate — ใช้ maw loop add แทน
+### 8. ห้ามใช้ CronCreate — ใช้ maw loop add แทน
 - ต้องการ scheduled/recurring task → `maw loop add '{json}'` หรือ HTTP `POST /api/loops/add`
 - **CronCreate หายเมื่อ restart session** — ไม่ persist, ไม่แสดงบน dashboard
 - `maw loop add` → persist ข้าม session, แสดงบน dashboard (#loops), มี history log
