@@ -66,7 +66,13 @@
 - ถ้างานค้าง → escalate ทันที อย่าปล่อยค้าง
 - **Explicit "done"** ทุกครั้ง — implicit "กำลังทำอยู่" ไม่พอ
 
-### 8. ห้ามใช้ CronCreate — ใช้ maw loop add แทน
+### 8. Context 80% = Auto /rrr + /forward — ห้าม context ล้น
+- **เมื่อ context window ใกล้เต็ม (80%+) → ต้อง `/rrr` แล้ว `/forward` ทันที**
+- ห้ามรอจน context ล้นแล้วค่อยทำ — ข้อมูลจะหาย
+- ตรวจสอบ context ตัวเองเสมอ ถ้ารู้สึกว่า conversation ยาวมาก → เช็คและทำ
+- Flow: `/rrr` (สรุป session + lessons) → `/forward` (สร้าง handoff ให้ session ถัดไป)
+- **กฎนี้สำคัญกว่างานที่ทำอยู่** — หยุดงานก่อน rrr+forward ก่อน แล้วค่อยทำต่อใน session ใหม่
+### 9. ห้ามใช้ CronCreate — ใช้ maw loop add แทน
 - ต้องการ scheduled/recurring task → `maw loop add '{json}'` หรือ HTTP `POST /api/loops/add`
 - **CronCreate หายเมื่อ restart session** — ไม่ persist, ไม่แสดงบน dashboard
 - `maw loop add` → persist ข้าม session, แสดงบน dashboard (#loops), มี history log

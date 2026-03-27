@@ -12,6 +12,7 @@ node_modules/
 # Data files — stored in Supabase Storage, not Git
 data/raw/
 data/processed/
+data/kb/
 *.pdf
 *.csv.gz
 *.parquet
